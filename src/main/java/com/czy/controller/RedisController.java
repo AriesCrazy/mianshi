@@ -23,6 +23,9 @@ public class RedisController {
     // get 值
     @GetMapping("/get")
     public Object getKey(@RequestParam String key) {
+        if (!redisTemplate.hasKey(key)) {
+            return "key不存在";
+        }
         return redisTemplate.opsForValue().get(key);
     }
 
