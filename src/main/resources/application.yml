@@ -6,7 +6,7 @@ spring:
     name: mianshi
 
   datasource:
-    url: jdbc:mysql://192.168.0.222:3306/mianshi?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=utf8mb4
+    url: jdbc:mysql://192.168.0.222:3306/mianshi?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=utf8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
