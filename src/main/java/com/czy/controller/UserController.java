@@ -24,7 +24,7 @@ public class UserController {
         return userMapper.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/insert")
     public String create(@RequestBody User user) {
         int rows = userMapper.insert(user);
         return rows > 0 ? "新增成功，ID: " + user.getId() : "新增失败";
