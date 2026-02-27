@@ -11,16 +11,23 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  # Redis配置
+  data:
+    redis:
+      host: 192.168.0.222
+      port: 6379
+      password:  # 如果有密码就填写
+      database: 0
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.czy.entity
-
-redis:
-  host: 127.0.0.1   # 或 localhost
-  port: 6379
-  # password: 123456   # 如果有密码再加这一行
-  database: 0         # 默认0号库
-  timeout: 5000ms
 
 logging:
   level:
