@@ -19,7 +19,7 @@ public class UserController {
         return userMapper.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getById")
     public User getById(@PathVariable Long id) {
         return userMapper.findById(id);
     }
@@ -30,14 +30,14 @@ public class UserController {
         return rows > 0 ? "新增成功，ID: " + user.getId() : "新增失败";
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateById")
     public String update(@PathVariable Long id, @RequestBody User user) {
         user.setId(id);
         int rows = userMapper.update(user);
         return rows > 0 ? "更新成功" : "更新失败";
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteById")
     public String delete(@PathVariable Long id) {
         int rows = userMapper.deleteById(id);
         return rows > 0 ? "删除成功" : "删除失败";
