@@ -5,7 +5,18 @@ spring:
   application:
     name: mianshi
 
-# 日志格式
+  datasource:
+    url: jdbc:mysql://192.168.0.222:3306/mianshi?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=utf8mb4
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.czy.entity
+
 logging:
+  level:
+    com.czy.mianshi.mapper: debug   # 打印SQL，便于调试
   pattern:
-    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%5p) %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n"
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%5p) %clr(---){faint} %clr(\[%15.15t\]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n"
