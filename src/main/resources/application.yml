@@ -25,6 +25,13 @@ spring:
           min-idle: 0
           max-wait: -1ms
 
+  rabbitmq:
+    host: 192.168.0.222          # 或 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.czy.entity
